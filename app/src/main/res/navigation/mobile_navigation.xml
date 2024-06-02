@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.virtualfittingroom.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_katalog_pria"
+        android:name="com.virtualfittingroom.ui.katalogPria.KatalogPriaFragment"
+        android:label="@string/menu_katalog_pria"
+        tools:layout="@layout/fragment_katalog_pria" />
+
+    <fragment
+        android:id="@+id/nav_katalog_wanita"
+        android:name="com.virtualfittingroom.ui.katalogWanita.KatalogWanitaFragment"
+        android:label="@string/menu_katalog_wanita"
+        tools:layout="@layout/fragment_katalog_wanita" />
+
+    <fragment
+        android:id="@+id/nav_app_settings"
+        android:name="com.virtualfittingroom.ui.settings.SettingsFragment"
+        android:label="@string/menu_app_settings"
+        tools:layout="@layout/fragment_settings" />
+ 
+</navigation>

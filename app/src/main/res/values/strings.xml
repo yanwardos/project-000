@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Virtual Fitting Room</string>
+    <string name="KEY_PREFERENCE">VFR_PREFERENCE</string>
+    <string name="KEY_DATA">VFR_PREF_DATA</string>
+    <string name="login_title">VFR Login</string>
+    <string name="login_hint_email">Email</string>
+    <string name="login_hint_password">Password</string>
+    <string name="login_btn_login">Login</string>
+    <string name="login_register_here">Or register here!</string>
+    <string name="register_title">VFR Register</string>
+    <string name="register_hint_name">Name</string>
+    <string name="register_hint_email">Email</string>
+    <string name="register_hint_password">Password</string>
+    <string name="register_btn_register">Register</string>
+    <string name="register_already_have_account">Already have account? Login here.</string>
+    <string name="register_hint_password_confirm">Password confirm</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Name</string>
+    <string name="nav_header_subtitle">User email</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_katalog_pria">Pria</string>
+    <string name="menu_katalog_wanita">Wanita</string>
+    <string name="menu_category_app">Aplikasi</string>
+    <string name="menu_settings">Pengaturan</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_app_settings">Pengaturan</string>
+    <string name="menu_category_katalog">Daftar Katalog</string>
+    <string name="toast_logout_success">Berhasil logout.</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <string name="url_base_api">https://vfr.yanwardos.my.id/api/</string>
+    <string name="url_base_avatar">https://vfr.yanwardos.my.id/avatar/</string>
+</resources>
