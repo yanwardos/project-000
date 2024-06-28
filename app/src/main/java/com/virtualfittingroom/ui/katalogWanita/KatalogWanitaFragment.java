@@ -1,11 +1,11 @@
 package com.virtualfittingroom.ui.katalogWanita;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.virtualfittingroom.data.models.CatalogModel;
 import com.virtualfittingroom.databinding.FragmentKatalogWanitaBinding;
-import com.virtualfittingroom.ui.MainActivity;
 import com.virtualfittingroom.ui.components.RVCatalogAdapter;
 
 import java.util.List;
@@ -39,7 +38,10 @@ public class KatalogWanitaFragment extends Fragment {
         RVCatalogAdapter rvCatalogAdapter = new RVCatalogAdapter(katalogWanitaViewModel.getCatalogList().getValue(), new RVCatalogAdapter.CatalogItemCallback() {
             @Override
             public void onClick(CatalogModel catalog) {
-                Toast.makeText(getContext(), "Item: " + catalog.getName(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Item: " + catalog.getName(), Toast.LENGTH_SHORT).show();
+//                startActivity(
+//                        new Intent(getContext(), ARActivity.class)
+//                );
             }
         });
 

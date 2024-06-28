@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -18,16 +20,13 @@
         android:theme="@style/Theme.VirtualFittingRoom"
         tools:targetApi="34">
         <activity
-            android:name=".ARActivity"
-            android:exported="false" />
+            android:name=".ui.ARActivity"
+            android:exported="false" >
+
+        </activity>
         <activity
             android:name=".FittingRoomActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
         <activity
             android:name=".ui.MainActivity"
@@ -44,15 +43,13 @@
             android:theme="@style/Theme.VirtualFittingRoom.NoActionBar" />
         <activity
             android:name=".ui.SplashScreenActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.VirtualFittingRoom.NoActionBar">
 
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
     </application>
 
