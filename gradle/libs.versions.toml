@@ -21,6 +21,15 @@ preference = "1.2.1"
 arsceneview = "2.2.0"
 obj = "0.4.0"
 core = "1.43.0"
+guava = "33.2.1-jre"
+cameraCore = "1.4.0-beta02"
+cameraCamera2 = "1.4.0-beta02"
+cameraLifecycle = "1.4.0-beta02"
+cameraVideo = "1.4.0-beta02"
+cameraView = "1.4.0-beta02"
+cameraExtensions = "1.4.0-beta02"
+poseDetection = "18.0.0-beta4"
+poseDetectionAccurate = "18.0.0-beta4"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -44,6 +53,15 @@ preference = { group = "androidx.preference", name = "preference", version.ref =
 arsceneview = { group = "io.github.sceneview", name = "arsceneview", version.ref = "arsceneview" }
 obj = { group = "de.javagl", name = "obj", version.ref = "obj" }
 core = { group = "com.google.ar", name = "core", version.ref = "core" }
+guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
+camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraCore" }
+camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "cameraCamera2" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraLifecycle" }
+camera-video = { group = "androidx.camera", name = "camera-video", version.ref = "cameraVideo" }
+camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraView" }
+camera-extensions = { group = "androidx.camera", name = "camera-extensions", version.ref = "cameraExtensions" }
+pose-detection = { group = "com.google.mlkit", name = "pose-detection", version.ref = "poseDetection" }
+pose-detection-accurate = { group = "com.google.mlkit", name = "pose-detection-accurate", version.ref = "poseDetectionAccurate" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
