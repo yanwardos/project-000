@@ -2,12 +2,24 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+<!--    camera permissions-->
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+
+<!--    ar-->
+    <uses-feature android:name="android.hardware.camera.ar" />
+
+<!--    gles-->
+    <uses-feature android:glEsVersion="0x00030001" android:required="true" />
+
+<!--    internet-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+<!--    storage-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" />
 
     <application
         android:allowBackup="true"
@@ -19,14 +31,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VirtualFittingRoom"
         tools:targetApi="34">
-        <activity
-            android:name=".ui.ARActivity"
-            android:exported="false" >
 
-        </activity>
+<!--        MAIN ACTIVITY TUKAR KESINI DULU-->
         <activity
             android:name=".FittingRoomActivity"
-            android:exported="false">
+            android:exported="true"
+            android:theme="@style/Theme.VirtualFittingRoom.NoActionBar">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".ui.MainActivity"
@@ -41,15 +55,17 @@
             android:name=".ui.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.VirtualFittingRoom.NoActionBar" />
+
+<!--        MAIN ACTIVITY YANG SEBENARNYA -->
         <activity
             android:name=".ui.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.VirtualFittingRoom.NoActionBar">
 
-             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

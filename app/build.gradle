@@ -1,0 +1,122 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+}
+
+def vuforia_engine_path = "C:/.vuforia"
+def arcore_libpath = "${buildDir}/arcore-native"
+
+configurations { natives }
+
+android{
+    namespace "com.virtualfittingroom"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.virtualfittingroom"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        ndkVersion "26.1.10909125"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk{
+            abiFilters ((project.findProperty('abiList') ?: 'armeabi-v7a, arm64-v8a').split(/,\s*/))
+        }
+        externalNativeBuild {
+            cmake {
+                cppFlags '-std=c++17'
+                arguments "-Darcore_libpath=${arcore_libpath}/jni",
+                        "-Darcore_include=${project.rootDir}/arcore/include",
+                        "-Dvuforia_engine_path=${vuforia_engine_path}"
+            }
+        }
+
+    }
+
+    archivesBaseName = "virtual-fitting-room"
+//    sourceset
+//    ...
+    sourceSets {
+        main {
+            assets.srcDirs += ['../../Assets/ImageTargets','../../Assets/ModelTargets']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures{
+        viewBinding true
+    }
+    externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.22.1'
+        }
+    }
+}
+
+dependencies {
+
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
+    implementation(libs.retrofit)
+    implementation(libs.gson)
+    implementation(libs.converter.gson)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+    implementation(libs.legacy.support.v4)
+    implementation(libs.picasso)
+    implementation(libs.circleimageview)
+    implementation(libs.preference)
+    implementation(libs.arsceneview)
+    implementation(libs.obj)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+
+//    libtree
+    implementation fileTree(dir: 'libs', includes: ['*.jar'])
+
+//    vuforia
+    implementation files("$vuforia_engine_path/build/java/VuforiaEngine.jar")
+
+//    arcore
+    implementation libs.core
+    natives libs.core
+}
+
+
+task extractNativeLibraries(){
+    outputs.upToDateWhen { false }
+    doFirst {
+        configurations.natives.files.each {f->
+            copy{
+                from zipTree(f)
+                into arcore_libpath
+                include "jni/**/*"
+            }
+        }
+    }
+}
+
+tasks.whenTaskAdded {
+    task -> if((task.name.contains("external") || task.name.contains("CMake")) && !task.name.contains("Clean")){
+        task.dependsOn(extractNativeLibraries)
+    }
+}
+
+task wrapper(type: Wrapper){
+    gradleVersion = "8.6"
+}

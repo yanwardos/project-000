@@ -46,6 +46,15 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
-    <string name="url_base_api">https://vfr.yanwardos.my.id/api/</string>
-    <string name="url_base_avatar">https://vfr.yanwardos.my.id/avatar/</string>
+<!--    <string name="url_base_api">https://vfr.yanwardos.my.id/api/</string>-->
+<!--    <string name="url_base_avatar">https://vfr.yanwardos.my.id/avatar/</string>-->
+
+<!--    backup-->
+    <string name="url_base_api">https://vfr.igoniometer.my.id/api/</string>
+    <string name="url_base_avatar">https://vfr.igoniometer.my.id/avatar/</string>
+
+
+
+    <string name="error_dialog_title">VFR Error</string>
+    <string name="ok">OK</string>
 </resources>

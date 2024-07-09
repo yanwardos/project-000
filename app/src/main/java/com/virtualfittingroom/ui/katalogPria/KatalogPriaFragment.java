@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.virtualfittingroom.FittingRoomActivity;
 import com.virtualfittingroom.data.models.CatalogModel;
 import com.virtualfittingroom.databinding.FragmentKatalogPriaBinding;
 import com.virtualfittingroom.ui.components.RVCatalogAdapter;
@@ -39,9 +40,9 @@ public class KatalogPriaFragment extends Fragment {
             @Override
             public void onClick(CatalogModel catalog) {
 //                Toast.makeText(getContext(), "Item: " + catalog.getName(), Toast.LENGTH_SHORT).show();
-//                startActivity(
-//                        new Intent(getContext(), ARActivity.class)
-//                );
+                startActivity(
+                        new Intent(getContext(), FittingRoomActivity.class)
+                );
             }
         });
         binding.rvCatalog.setAdapter(rvCatalogAdapter);
