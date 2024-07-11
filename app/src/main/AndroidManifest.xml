@@ -33,15 +33,15 @@
         tools:targetApi="34">
 
 <!--        MAIN ACTIVITY TUKAR KESINI DULU-->
-        <activity
-            android:name=".FittingRoomActivity"
-            android:exported="false"
-            android:theme="@style/Theme.VirtualFittingRoom.NoActionBar">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
+<!--        <activity-->
+<!--            android:name=".FittingRoomActivity"-->
+<!--            android:exported="false"-->
+<!--            android:theme="@style/Theme.VirtualFittingRoom.NoActionBar">-->
+<!--&lt;!&ndash;            <intent-filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                <action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </intent-filter>&ndash;&gt;-->
+<!--        </activity>-->
         <activity android:name=".FittingRoomActivityMLKit"
             android:exported="true"
             android:theme="@style/Theme.VirtualFittingRoom.NoActionBar"/>

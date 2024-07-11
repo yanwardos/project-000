@@ -13,7 +13,6 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 
-import com.virtualfittingroom.FittingRoomActivity;
 import com.virtualfittingroom.FittingRoomActivityMLKit;
 import com.virtualfittingroom.data.models.CatalogModel;
 import com.virtualfittingroom.databinding.FragmentKatalogPriaBinding;
